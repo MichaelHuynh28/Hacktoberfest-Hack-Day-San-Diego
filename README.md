@@ -45,6 +45,7 @@ In order to get an introduction to the night sky's skeleton, we have created Sta
 * Finding a balance in audiences, targeting older and younger audiences.
 * Working with API's for the first time.
 * Communication in a team, bridging the gap of ideas and perspectives
+* Handeling stress, the mental and emtional toll of learning.
 * Deciding what challenges to attempt, and what product to build. With little restrictions on what to make, and lack of structure create an overwhelming set of possibilities when deciding on a project.
 * Logistical practices and maintaining technical habits
 
