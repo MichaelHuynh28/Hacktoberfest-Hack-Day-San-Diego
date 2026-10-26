@@ -36,7 +36,7 @@ In order to get an introduction to the night sky's skeleton, we have created Sta
 ---
 
 ## Tech Stack
-* **Language:** Python, JavaScript, CSS
+* **Language:** Python, JavaScript, CSS, HTML
 * **IDE / Platform:** VS Code, Cursor
 * **Data Source:** HGY Database
 * **Visualization:** D3
