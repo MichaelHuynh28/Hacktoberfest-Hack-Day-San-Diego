@@ -2,6 +2,8 @@
 
 
 > *For the nurturing of curiosity, a wonder which extends as far as the stars in the galaxy.*
+> *Demo: https://youtu.be/420uC-ZwInA*
+> *Website: https://star-scout.netlify.app/*
 
 ---
 
