@@ -1,0 +1,20 @@
+{
+  "name": "star-scout",
+  "version": "0.1.0",
+  "description": "Interactive Milky Way star map: hover to identify stars, click to have Gemma 4 explain them.",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "Michael Huynh",
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0"
+  }
+}
