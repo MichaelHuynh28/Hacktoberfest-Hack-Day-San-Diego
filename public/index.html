@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Star Scout · Ask an open model about the Milky Way</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="sky" aria-label="Interactive star map"></canvas>
+
+  <header id="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">✦</div>
+      <div class="brand-text">
+        <h1>Star Scout</h1>
+        <span class="badge"><span class="badge-dot"></span>Powered by Gemma 4 <em>(open weights)</em></span>
+      </div>
+    </div>
+    <nav class="topnav glass" aria-label="Pages">
+      <a href="index.html" class="active" aria-current="page">Map</a>
+      <a href="lookup.html">Star Lookup</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="controls glass">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Find a star… (Betelgeuse)" list="star-names" autocomplete="off">
+      </div>
+      <datalist id="star-names"></datalist>
+      <div class="seg" id="view-toggle" role="group" aria-label="Map view">
+        <button type="button" data-view="dome" aria-pressed="true" title="Sky dome as seen from Earth">Dome</button>
+        <button type="button" data-view="pano" aria-pressed="false" title="Flat full-sky Milky Way panorama (galactic coordinates)">Panorama</button>
+      </div>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" id="toggle-lines" checked><span>Lines</span></label>
+        <label class="chip"><input type="checkbox" id="toggle-mw" checked><span>Milky Way</span></label>
+        <label class="chip"><input type="checkbox" id="toggle-labels" checked><span>Labels</span></label>
+        <label class="chip chip-planets" title="Show our Sun where it is today, and its yearly path"><input type="checkbox" id="toggle-planets" checked><span>Sun</span></label>
+        <label class="chip chip-kids" title="Gemma explains things in kid-friendly words"><input type="checkbox" id="toggle-kids" checked><span>Kid mode</span></label>
+      </div>
+      <button id="quest-btn" class="quest-btn" title="Star treasure hunts"><span class="quest-label">Quests</span></button>
+      <button id="tour-btn" class="primary"><span class="tour-icon">▶</span> <span class="tour-label">Gemma Tour</span></button>
+    </div>
+  </header>
+
+  <div id="mode-banner" hidden></div>
+  <div id="toast" hidden></div>
+  <div id="tooltip" hidden></div>
+
+  <aside id="panel" class="glass" aria-hidden="true">
+    <button id="panel-close" title="Close (Esc)" aria-label="Close">×</button>
+    <div class="panel-head">
+      <div id="panel-orb"></div>
+      <div>
+        <div id="panel-kicker">Star</div>
+        <h2 id="panel-title">Star</h2>
+        <div id="panel-sub"></div>
+      </div>
+    </div>
+    <div id="facts"></div>
+    <div class="section-label"><span class="gem">◆</span> Gemma says</div>
+    <section id="chat"></section>
+    <form id="ask-form" autocomplete="off">
+      <input id="ask-input" type="text" placeholder="Ask a follow-up… e.g. How big is it vs the Sun?">
+      <button type="submit" class="primary" aria-label="Ask">Ask ↵</button>
+    </form>
+  </aside>
+
+  <div id="tour-card" class="glass" hidden>
+    <div class="tour-head">
+      <span id="tour-step"></span>
+      <div class="tour-nav">
+        <button id="tour-prev" title="Previous">‹</button>
+        <button id="tour-pause" title="Pause/resume">❚❚</button>
+        <button id="tour-next" title="Next">›</button>
+        <button id="tour-stop" title="End tour (Esc)">×</button>
+      </div>
+    </div>
+    <div class="tour-progress"><div id="tour-bar"></div></div>
+    <h3 id="tour-name"></h3>
+    <div id="tour-blurb" class="md"></div>
+    <div class="tour-hint">Click the name for the full Gemma explainer</div>
+  </div>
+
+  <div id="badge-shelf" class="glass" hidden title="My Badges"></div>
+
+  <div id="quest-card" class="glass" hidden aria-live="polite"></div>
+
+  <div id="quest-picker" hidden>
+    <div class="qp-card glass" role="dialog" aria-label="Choose a quest">
+      <button class="qp-close" id="qp-close" aria-label="Close">×</button>
+      <div class="qp-kicker">Star Quests</div>
+      <h2>Pick a treasure hunt!</h2>
+      <p class="qp-sub">Follow the clues, find the stars, and earn badges.</p>
+      <div id="qp-list" class="qp-list"></div>
+      <div class="qp-badges"><div class="qp-badges-title">My Badges</div><div id="qp-badges"></div></div>
+      <div class="qp-credit">Badge pictures: <a href="https://en.wikipedia.org/" target="_blank" rel="noopener">Image: Wikipedia</a> (Wikimedia Commons, free licenses)</div>
+    </div>
+  </div>
+  <div id="confetti" aria-hidden="true"></div>
+
+  <div id="tips" class="glass" hidden role="dialog" aria-label="How to use the map">
+    <button class="tips-x" id="tips-close" aria-label="Close tips">×</button>
+    <div class="tips-title">Welcome, space explorer!</div>
+    <ul class="tips-list">
+      <li><b>Hover</b> a star to see its name</li>
+      <li><b>Click</b> a star (or our Sun) to ask Gemma about it</li>
+      <li><b>Drag</b> to look around, <b>scroll</b> to zoom</li>
+      <li>The <b class="ss">big glowing yellow dot</b> is our Sun, in its real spot in the sky today</li>
+      <li><b>Quests</b> are star treasure hunts. Try one!</li>
+    </ul>
+    <div class="tips-actions"><button id="tips-sun">Find the Sun</button><button class="primary" id="tips-ok" onclick="document.getElementById('tips-close').click()">Got it!</button></div>
+  </div>
+
+  <footer id="credits">
+    Star data: <a href="https://github.com/astronexus/HYG-Database" target="_blank" rel="noopener">HYG v4.1</a> (CC BY-SA 4.0) ·
+    Milky Way &amp; constellations: <a href="https://github.com/ofrohn/d3-celestial" target="_blank" rel="noopener">d3-celestial</a> (BSD-3) ·
+    Rendering: <a href="https://d3js.org" target="_blank" rel="noopener">D3</a> · Sun position: JPL approximate orbital elements
+  </footer>
+
+  <script src="vendor/d3.min.js"></script>
+  <script src="js/markdown.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/planets.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/quests.js"></script>
+</body>
+</html>

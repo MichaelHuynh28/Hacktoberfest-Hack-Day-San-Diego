@@ -1,0 +1,179 @@
+{
+  "quests": [
+    {
+      "id": "orion-belt",
+      "title": "Find Orion's Belt",
+      "difficulty": "Easy",
+      "badge": {
+        "name": "Belt Buckler"
+      },
+      "intro": "Orion the Hunter is one of the easiest star pictures to spot. His belt is three stars in a neat little row!",
+      "steps": [
+        {
+          "star": "Alnilam",
+          "clue": "Look for three stars in a row in the hunter's belt! Click the one in the MIDDLE.",
+          "hint": "The belt is between bright red Betelgeuse and bright blue Rigel.",
+          "fact": "Alnilam is a blue supergiant about 2,000 light-years away. It shines hundreds of thousands of times brighter than our Sun!"
+        },
+        {
+          "star": "Alnitak",
+          "clue": "Great! Now find the belt star on the LEFT end (the one closer to Betelgeuse's side, going down).",
+          "hint": "It sits right next to Alnilam, on the side toward the bottom-left.",
+          "fact": "Alnitak is actually a family of stars orbiting each other. Near it is the famous Horsehead Nebula, a dark cloud shaped like a horse's head!"
+        },
+        {
+          "star": "Mintaka",
+          "clue": "Last one! Click the belt star on the OTHER end of the row.",
+          "hint": "It's the belt star closest to the right, a little higher than the other two.",
+          "fact": "Mintaka sits almost exactly on the sky's equator, so people everywhere on Earth can see it, from the North Pole to the South Pole!"
+        }
+      ],
+      "imageQuery": "Orion (mythology)",
+      "constellation": "Ori",
+      "outlineLabel": "Orion the Hunter"
+    },
+    {
+      "id": "brightest",
+      "title": "Meet the Brightest Stars",
+      "difficulty": "Easy",
+      "badge": {
+        "name": "Star Spotter"
+      },
+      "intro": "Some stars look super bright because they are huge, and some because they are close. Let's meet the champions!",
+      "steps": [
+        {
+          "star": "Sirius",
+          "clue": "Find the BRIGHTEST star in the whole night sky. It's called the Dog Star!",
+          "hint": "Follow Orion's belt down and to the left, and you'll bump right into it.",
+          "fact": "Sirius is only 8.6 light-years away, which is super close for a star. That's one reason it looks so bright!"
+        },
+        {
+          "star": "Canopus",
+          "clue": "Now find the second-brightest star. It's far in the southern sky.",
+          "hint": "It's below Sirius, much further south, almost all by itself.",
+          "fact": "Canopus is a giant star about 300 light-years away. Spacecraft have used it like a compass to steer through space!"
+        },
+        {
+          "star": "Arcturus",
+          "clue": "Find a bright ORANGE star. Its name means 'Guardian of the Bear'.",
+          "hint": "Follow the curve of the Big Dipper's handle and 'arc to Arcturus'!",
+          "fact": "Arcturus is an orange giant, about 25 times wider than our Sun. Its light helped open the 1933 World's Fair in Chicago!"
+        },
+        {
+          "star": "Vega",
+          "clue": "Last one! Find a bright blue-white star in the little harp constellation, Lyra.",
+          "hint": "It's a very bright star with a small parallelogram of stars next to it.",
+          "fact": "Vega spins so fast that it's squashed, like a ball that's being stretched at its middle! In about 12,000 years it will be our North Star."
+        }
+      ],
+      "imageQuery": "Star",
+      "outlineLabel": "Brightest Stars"
+    },
+    {
+      "id": "neighbors",
+      "title": "Our Closest Neighbors",
+      "difficulty": "Medium",
+      "badge": {
+        "name": "Space Neighbor"
+      },
+      "intro": "Which stars live closest to our Sun? Let's visit our neighbors in space!",
+      "steps": [
+        {
+          "star": "Rigil Kentaurus",
+          "clue": "Find the closest bright star to us! It's a bright star low in the southern sky, in the Centaur.",
+          "hint": "It's one of two bright 'pointer' stars near the Southern Cross. Pick the brighter one!",
+          "fact": "Rigil Kentaurus (Alpha Centauri) is only 4.3 light-years away. Light from it takes about 4 years to reach your eyes!"
+        },
+        {
+          "star": "Sirius",
+          "clue": "Now find the brightest star in the sky. It's also one of our closest neighbors!",
+          "hint": "Look for the super bright star near Orion, down and to the left of the belt.",
+          "fact": "Sirius has a tiny partner star called Sirius B, a 'white dwarf' that is about the size of Earth but as heavy as the Sun!"
+        },
+        {
+          "star": "Procyon",
+          "clue": "Find the 'Little Dog' star. It's another close neighbor, near Sirius.",
+          "hint": "It's a bright star above and to the left of Orion, making a triangle with Betelgeuse and Sirius.",
+          "fact": "Procyon is about 11 light-years away. Its name means 'before the dog' because it rises just before Sirius, the Dog Star!"
+        }
+      ],
+      "imageQuery": "Alpha Centauri",
+      "outlineLabel": "Our Neighbors"
+    },
+    {
+      "id": "big-dipper",
+      "title": "Big Dipper Hunt",
+      "difficulty": "Medium",
+      "badge": {
+        "name": "Bear Tracker"
+      },
+      "intro": "The Big Dipper looks like a giant spoon (or a pot with a handle). It's part of the Great Bear!",
+      "steps": [
+        {
+          "star": "Dubhe",
+          "clue": "Find the star at the top corner of the Dipper's cup, the one furthest from the handle.",
+          "hint": "The cup has four stars. Dubhe is the top one on the side away from the handle.",
+          "fact": "Dubhe and Merak are called the 'Pointer Stars'. Draw a line through them and it points to Polaris, the North Star!"
+        },
+        {
+          "star": "Merak",
+          "clue": "Now find the star right below Dubhe, at the bottom of the cup.",
+          "hint": "It's the other 'pointer' star, just under Dubhe.",
+          "fact": "Merak is about 80 light-years away and is twice as big as our Sun."
+        },
+        {
+          "star": "Mizar",
+          "clue": "Find the middle star of the Dipper's handle.",
+          "hint": "The handle has three stars in a curve. Pick the one in the middle.",
+          "fact": "Mizar has a tiny buddy star called Alcor. Long ago, people tested their eyesight by trying to see both!"
+        },
+        {
+          "star": "Alkaid",
+          "clue": "Last one! Find the star at the very end of the handle.",
+          "hint": "Follow the handle all the way out to its tip.",
+          "fact": "Alkaid is a hot blue star about 100 light-years away. Its name means 'the leader' in Arabic."
+        }
+      ],
+      "imageQuery": "Brown bear",
+      "constellation": "UMa",
+      "outlineLabel": "Ursa Major, the Great Bear"
+    },
+    {
+      "id": "red-vs-blue",
+      "title": "Red Giants vs Blue Giants",
+      "difficulty": "Hard",
+      "badge": {
+        "name": "Star Color Expert"
+      },
+      "intro": "Stars come in colors! Red stars are cooler, and blue stars are super hot. Can you find them?",
+      "steps": [
+        {
+          "star": "Betelgeuse",
+          "clue": "Find the big RED star on Orion's shoulder.",
+          "hint": "It's the bright orange-red star above the belt, on the left side.",
+          "fact": "Betelgeuse is so huge that if it were where our Sun is, it would swallow Mercury, Venus, Earth and Mars!"
+        },
+        {
+          "star": "Rigel",
+          "clue": "Now find a bright BLUE star at Orion's knee, on the opposite corner from Betelgeuse.",
+          "hint": "It's below the belt on the right side.",
+          "fact": "Rigel is a blue supergiant, about 120,000 times brighter than the Sun. Blue stars are much hotter than red ones!"
+        },
+        {
+          "star": "Antares",
+          "clue": "Find the red heart of the Scorpion. Its name means 'rival of Mars'!",
+          "hint": "Look for a reddish star in the middle of a long, curvy line of stars shaped like a scorpion.",
+          "fact": "Antares is about 700 times wider than our Sun. It looks reddish, just like the planet Mars."
+        },
+        {
+          "star": "Spica",
+          "clue": "Last one! Find a bright BLUE-white star in Virgo.",
+          "hint": "Follow the Big Dipper's handle: 'arc to Arcturus, then speed on to Spica'.",
+          "fact": "Spica is actually two hot blue stars spinning around each other so fast that they're squished into egg shapes!"
+        }
+      ],
+      "imageQuery": "Rainbow",
+      "outlineLabel": "Red and Blue Stars"
+    }
+  ]
+}

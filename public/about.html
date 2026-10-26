@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About · Star Scout</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body class="page">
+  <header class="pg-top">
+    <a class="brand" href="index.html">
+      <div class="logo" aria-hidden="true">✦</div>
+      <div class="brand-text">
+        <h1>Star Scout</h1>
+        <span class="badge"><span class="badge-dot"></span>Powered by Gemma 4 <em>(open weights)</em></span>
+      </div>
+    </a>
+    <nav class="pg-nav glass" aria-label="Main">
+      <a href="index.html">Map</a>
+      <a href="lookup.html">Star Lookup</a>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+  </header>
+  <main class="pg-main">
+    <section class="pg-hero">
+      <h2>What is Star Scout?</h2>
+      <p>A map of real stars that you can explore, with a friendly AI guide that answers your questions. Made for curious kids, parents, and teachers.</p>
+    </section>
+
+    <div class="ab-grid">
+      <section class="ab-card glass">
+        <h3>What you're looking at</h3>
+        <ul>
+          <li><b>Real stars.</b> Every dot is a real star from the <b>HYG star catalog</b>, a big free list that astronomers made from telescope surveys. We show the roughly 9,000 stars you could see with just your eyes on a very dark night.</li>
+          <li><b>Real colors and brightness.</b> Bigger, brighter dots are brighter in our sky. Blue-white stars are hot, and orange and red stars are cooler.</li>
+          <li><b>The Milky Way.</b> The soft glowing band is our home galaxy, seen from inside. It holds billions of stars that are too faint to see one by one.</li>
+          <li><b>Constellations.</b> The lines join stars into the 88 official star patterns, like Orion the Hunter.</li>
+        </ul>
+      </section>
+
+      <section class="ab-card glass">
+        <h3>Two ways to view the sky</h3>
+        <p><b>Dome</b> shows the sky the way it looks from Earth, like lying on your back and looking up. Drag to look around, and scroll to zoom.</p>
+        <p><b>Panorama</b> unrolls the whole sky into one flat picture, the way a world map flattens the globe. The Milky Way runs straight across the middle, so you can see our whole galaxy at once.</p>
+        <p><b>Our Sun</b> is on the map too, shown in its real position in the sky today as a big glowing yellow dot. The dashed line is the ecliptic, the path the Sun follows across the stars over a year. Click the Sun to find out how far away it is.</p>
+      </section>
+
+      <section class="ab-card glass wide">
+        <h3>How to use it</h3>
+        <ul class="ab-steps">
+          <li><b>Hover</b>Move your mouse over a star to see its name and constellation.</li>
+          <li><b>Click</b>Click a star to open its fact card. Gemma writes a short explanation about it.</li>
+          <li><b>Ask Gemma</b>Type any question about that star, like “Could I live there?” or “Why is it red?”</li>
+          <li><b>Gemma Tour</b>Gemma picks 5 interesting stars and flies you to each one.</li>
+          <li><b>Quests</b>Follow a set route of stars, such as “Find the North Star”, and finish the challenges.</li>
+          <li><b>Star Lookup</b>Don't want the map? <a href="lookup.html">Search for any star by name</a> and read about it.</li>
+        </ul>
+        <p style="margin-top:12px"><b>Kid mode</b> (on by default) asks Gemma to use short sentences, fun comparisons, and a “Wow fact”. Turn it off for more detailed answers.</p>
+      </section>
+
+      <section class="ab-card glass">
+        <h3>How the AI works</h3>
+        <p>The explanations come from <b>Gemma 4</b>, an <b>open-weight</b> AI model made by Google. Open-weight means anyone can download the model and run it or study it. This app uses Gemma 4 through the Gemini API.</p>
+        <p>When you click a star, we send Gemma that star's <b>real catalog numbers</b>: how far away it is, how bright it is, its color, and its star type. We ask Gemma to stick to those facts and not make up exact numbers.</p>
+        <p class="ab-note">AI can still make mistakes. If something sounds surprising, check it with a grown-up, a book, or a site like NASA's. That's what real scientists do too!</p>
+      </section>
+
+      <section class="ab-card glass">
+        <h3>For parents and teachers</h3>
+        <ul>
+          <li>Good for ages 8–12 with kid mode on, and for anyone curious with it off.</li>
+          <li>Classroom ideas: compare a red supergiant (Betelgeuse) with a blue one (Rigel). Work out when the starlight you see left its star. Find the North Star (Polaris).</li>
+          <li>There are no accounts and no ads. Questions go only to the AI model to get an answer.</li>
+          <li>Distances are in <b>light-years</b>, the distance light travels in one year, which is about 9.5 trillion km.</li>
+        </ul>
+      </section>
+
+      <section class="ab-card glass wide">
+        <h3>Credits and open source</h3>
+        <div class="ab-credits">
+          <ul>
+            <li><b><a href="https://ai.google.dev/gemma" target="_blank" rel="noopener">Gemma 4</a></b>: an open-weight AI model from Google (Gemma license)</li>
+            <li><b><a href="https://github.com/astronexus/HYG-Database" target="_blank" rel="noopener">HYG Database</a></b> by David Nash (astronexus): star data, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+          </ul>
+          <ul>
+            <li><b><a href="https://d3js.org" target="_blank" rel="noopener">D3</a></b>: drawing and map projections, ISC license</li>
+            <li><b><a href="https://github.com/ofrohn/d3-celestial" target="_blank" rel="noopener">d3-celestial</a></b> by Olaf Frohn: Milky Way outline and constellation lines, BSD-3-Clause</li>
+          </ul>
+        </div>
+        <p style="margin-top:12px">Star Scout is free and open source under the <b>MIT License</b>. You can read the code, change it, and share it.</p>
+      </section>
+    </div>
+
+    <div class="ab-built glass">Built at <b>Hacktoberfest Hack Day @ UC San Diego</b> (DS3), October 2026</div>
+  </main>
+  <footer class="pg-foot"><a href="index.html">Back to the map</a> · <a href="lookup.html">Star Lookup</a></footer>
+</body>
+</html>

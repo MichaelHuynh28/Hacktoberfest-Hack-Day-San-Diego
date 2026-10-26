@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Star Lookup · Star Scout</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body class="page">
+  <header class="pg-top">
+    <a class="brand" href="index.html">
+      <div class="logo" aria-hidden="true">✦</div>
+      <div class="brand-text">
+        <h1>Star Scout</h1>
+        <span class="badge"><span class="badge-dot"></span>Powered by Gemma 4 <em>(open weights)</em></span>
+      </div>
+    </a>
+    <nav class="pg-nav glass" aria-label="Main">
+      <a href="index.html">Map</a>
+      <a href="lookup.html" aria-current="page">Star Lookup</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <main class="pg-main">
+    <section class="pg-hero">
+      <h2>Look up any star ✨</h2>
+      <p>Type a star's name, or tap one below, and Gemma will tell you all about it.</p>
+    </section>
+
+    <div class="lk-search" role="combobox" aria-haspopup="listbox" aria-owns="lk-sugg">
+      <div class="sw glass">
+        <span aria-hidden="true">🔭</span>
+        <input id="lk-input" type="search" placeholder="Try “Betelgeuse” or “Vega”…" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="lk-sugg" aria-label="Search for a star">
+        <button id="lk-go" class="primary" type="button">Look up</button>
+      </div>
+      <ul id="lk-sugg" class="lk-sugg glass" role="listbox" hidden></ul>
+    </div>
+    <div id="lk-chips" class="lk-chips" aria-label="Popular stars"></div>
+
+    <div id="lk-empty" class="lk-empty"><span class="big">🌟</span>Loading star catalog…</div>
+
+    <section id="lk-result" class="lk-result" hidden>
+      <div class="lk-card glass">
+        <div class="lk-head">
+          <div id="lk-orb" class="lk-orb" aria-hidden="true"></div>
+          <div>
+            <h3 id="lk-name">Star</h3>
+            <div id="lk-sub" class="sub"></div>
+          </div>
+        </div>
+        <div id="lk-facts" class="lk-facts"></div>
+        <a id="lk-maplink" class="lk-maplink" href="index.html">🗺️ See it on the map →</a>
+      </div>
+
+      <div class="lk-card glass">
+        <div class="lk-ai-head">
+          <div class="section-label"><span class="gem">✦</span> Gemma explains</div>
+          <label class="kid-toggle" title="Explain things for ages 8–12">
+            <input id="kid-mode" type="checkbox" checked>
+            <span class="sw"></span><span class="lbl">Kid mode</span>
+          </label>
+        </div>
+        <div id="lk-chat" class="lk-chat"></div>
+        <div id="lk-sugq" class="lk-sugq"></div>
+        <form id="lk-ask" class="lk-ask">
+          <input id="lk-q" type="text" placeholder="Ask Gemma a question about this star…" autocomplete="off" maxlength="300">
+          <button class="primary" type="submit">Ask</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="pg-foot">Star data: <a href="https://github.com/astronexus/HYG-Database" target="_blank" rel="noopener">HYG Database</a> (CC BY-SA 4.0) · Explanations by Gemma 4, an open-weight AI model, which can make mistakes · <a href="about.html">About</a></footer>
+  <script src="js/markdown.js"></script>
+  <script src="js/lookup.js"></script>
+</body>
+</html>
